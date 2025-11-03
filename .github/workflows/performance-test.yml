@@ -7,7 +7,7 @@ on:
 
 jobs:
   cold-start:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -21,7 +21,7 @@ jobs:
         run: time npm ci
 
   cached-build:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -36,7 +36,7 @@ jobs:
         run: time npm ci
 
   test-execution:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -54,7 +54,7 @@ jobs:
         run: time npm test
 
   parallel-jobs:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     strategy:
       matrix:
         job-number: [1, 2, 3, 4, 5]
